@@ -35,9 +35,9 @@ gateway = '.'.join(ipv4_list)
 
 #ping网关
 
-ping_resul  = os.popen('ping '+ gateway).read()
+ping_resul  = os.popen('ping '+ gateway + ' -c 1').read()
 
-re_ping = re.findall(r'TTL', ping_resul)
+re_ping = re.findall(r'1 received', ping_resul)
 
 if re_ping:
     print('网关可达！')
