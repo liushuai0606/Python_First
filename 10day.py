@@ -1,4 +1,4 @@
-from 8day_3 import 8day_3
+from 8day import 8day
 from 9day import 9day
 import re
 import pprint

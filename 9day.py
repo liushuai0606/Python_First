@@ -1,7 +1,6 @@
 import paramiko
 import re
 
-
 def qytang_ssh(ip, username, password, port=22, cmd='ls'):
     import paramiko
     ssh = paramiko.SSHClient()
@@ -17,10 +16,9 @@ def ssh_get_route(ip, username, password):
         re_route = re.match(r'\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\s+'
                             r'(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})\s+'
                             r'\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\s+'
-                            r'(\w+)\s+\d+\s+\d+\s+\d+ \w',
+                            r'(\w+)\s+\d+\s+\d+\s+\d+ \w+',
                             route.strip())
 
-        print(re_route)
         if re_route:
             if re_route.group()[1] == 'UG':
                 return re_route.groups()[0]
