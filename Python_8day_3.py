@@ -15,7 +15,7 @@ def qytang_ping(ip):
 
 
 if __name__ == '__main__':
-    ping_kong = qytang_ping('192.168.1.1')
+    ping_kong = qytang_ping('192.168.1.105')
     if ping_kong[1]:
         print(f'Ping测试： {ping_kong[0]}      结果：通过！')
     else:
