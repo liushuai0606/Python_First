@@ -25,6 +25,7 @@ def ssh_get_route(ip, username, password):
             print(re_route)
 
 if __name__ == '__main__':
-    # print(qytang_ssh('192.168.1.110', 'root', 'Kd2@@456', cmd='pwd'))
+    print(qytang_ssh('192.168.1.110', 'root', 'Kd2@@456'))
+    print(qytang_ssh('192.168.1.110', 'root', 'Kd2@@456', cmd='pwd'))
     print('网关为：')
     print(ssh_get_route('192.168.1.110', 'root', 'Kd2@@456'))

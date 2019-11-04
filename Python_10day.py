@@ -3,10 +3,10 @@ from Python_9day import qytang_ssh
 import re
 import pprint
 
-def qytang_get_if(*ips, username='root', password='Kd2@@456'):
+
+def qytang_get_if(*ips, username='admin', password='cisco'):
     device_if_dict = {}
     for ip in ips:
-        print(ip)
         if_dict = {}
         if qytang_ping(ip):
             for line in qytang_ssh(ip, username, password, 'show ip int brie').split('\n'):
@@ -15,6 +15,7 @@ def qytang_get_if(*ips, username='root', password='Kd2@@456'):
 
     return device_if_dict
 
+
 if __name__ == "__main__":
-    pprint.pprint(qytang_get_if('192.168.1.110', '192.168.1.2', username='root', password='Kd2@@456'), indent=4)
+    pprint.pprint(qytang_get_if('192.168.32.100', '192.168.32.101', username='admin', password='cisco'), indent=4)
 
