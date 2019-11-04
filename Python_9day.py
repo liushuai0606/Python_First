@@ -20,8 +20,9 @@ def ssh_get_route(ip, username, password):
                             route.strip())
 
         if re_route:
-            if re_route.group()[1] == 'UG':
+            if re_route.groups()[1] == 'UG':
                 return re_route.groups()[0]
+            print(re_route)
 
 if __name__ == '__main__':
     # print(qytang_ssh('192.168.1.110', 'root', 'Kd2@@456', cmd='pwd'))
