@@ -9,8 +9,12 @@ def qytang_get_if(*ips, username='admin', password='cisco'):
     for ip in ips:
         if_dict = {}
         if qytang_ping(ip):
-            for line in qytang_ssh(ip, username, password, 'show ip int brie').split('\n'):
-                print(line)
+            for line in qytang_ssh(ip, username, password, 'show ip inter brie').split('\n'):
+                re_result = re.match(r'([A-Z]\S+\d+)\s+'
+                                     r'(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})\s+'
+                                     r'\w+\s+\w+\s+\w+\s+\w+', line.strip())
+                if re_result:
+                    if_dict[re_result.groups()[0]] = re_result.groups()[1]
         device_if_dict[ip] = if_dict
 
     return device_if_dict
