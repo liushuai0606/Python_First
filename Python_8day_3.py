@@ -4,6 +4,8 @@ logging.getLogger("kamene.runtime").setLevel(logging.ERROR)
 
 from kamene.all import *
 ip = []
+
+
 def qytang_ping(ip):
     ping = IP(dst=ip) / ICMP()
     ping_result = sr1(ping, timeout=3, verbose=False)
