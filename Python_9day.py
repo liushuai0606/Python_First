@@ -2,7 +2,7 @@ import paramiko
 import re
 
 
-def qytang_ssh(ip, username, password, port=22, cmd='sh ip int b'):
+def qytang_ssh(ip, username, password, port=22, cmd='sh run'):
     import paramiko
     ssh = paramiko.SSHClient()
     ssh.load_system_host_keys()
