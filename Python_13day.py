@@ -69,11 +69,11 @@ if __name__ == '__main__':
     print(ping)  # 打印类
     ping.ping()  # 使用修改长度的包进行ping测试
     print_new('set ping src ip address')
-    ping.srcip = '192.168.32.100'  # 修改原IP地址
+    ping.srcip = '192.168.32.129'  # 修改原IP地址
     print(ping)  # 打印类
     ping.ping()  # 使用修改长度的包进行ping测试
     print_new('new class NewPing', '=')
-    newping = NewPing('192.168.32.100')  # 使用新的类Newping通过继承QYTPING类产生
+    newping = NewPing('192.168.32.101')  # 使用新的类Newping通过继承QYTPING类产生
     newping.length = 300
     print(newping)  # 打印类
     newping.ping()  # NewPing类自定义ping（）这个方法，’+'表示通，‘？’表示不通
