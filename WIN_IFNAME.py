@@ -26,10 +26,10 @@ def get_connection_name_from_guid(iface_guids):
 
 def win_from_name_get_id(ifname):
     x = ni.interfaces()
-    print(x)
+    # print(x)
     # x为接口清单 ['{3B759B87-F5DD-4CFB-8755-F4C77E2B7B0A}', '{EDDEA13C-C291-11E7-9C8C-806E6F6E6963}']
     return get_connection_name_from_guid(x).get(ifname)
 
 
 if __name__ == "__main__":
-    print(win_from_name_get_id("ens33"))
+    print(win_from_name_get_id("Net1"))
