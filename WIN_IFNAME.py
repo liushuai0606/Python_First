@@ -20,7 +20,7 @@ def get_connection_name_from_guid(iface_guids):
         except FileNotFoundError:
             pass
     # 返回iface_dict
-    print(iface_dict)
+    # print(iface_dict)
     return iface_dict
 
 
@@ -32,4 +32,4 @@ def win_from_name_get_id(ifname):
 
 
 if __name__ == "__main__":
-    print(win_from_name_get_id("Net1"))
+    print(win_from_name_get_id("无线网络连接"))
