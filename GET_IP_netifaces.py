@@ -1,6 +1,6 @@
 from netifaces import interfaces, ifaddresses, AF_INET, AF_INET6
 import platform
-
+print(platform.system())
 
 def get_ip_address(ifname):
     if platform.system() == "Linux":
@@ -9,7 +9,7 @@ def get_ip_address(ifname):
         except ValueError:
             return None
     elif platform.system() == "Windows":
-        from Part1_Classic_Protocols.Tools.WIN_IFNAME import win_from_name_get_id
+        from WIN_IFNAME import win_from_name_get_id
         if_id = win_from_name_get_id(ifname)
         if not if_id:
             return
@@ -26,7 +26,7 @@ def get_ipv6_address(ifname):
         except ValueError:
             return None
     elif platform.system() == "Windows":
-        from Part1_Classic_Protocols.Tools.WIN_IFNAME import win_from_name_get_id
+        from WIN_IFNAME import win_from_name_get_id
         if_id = win_from_name_get_id(ifname)
         if not if_id:
             return
