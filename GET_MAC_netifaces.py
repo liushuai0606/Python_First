@@ -23,7 +23,7 @@ def get_mac_address(ifname):
         except ValueError:
             return None
     elif platform.system() == "Windows":
-        from Part1_Classic_Protocols.Tools.WIN_IFNAME import win_from_name_get_id
+        from WIN_IFNAME import win_from_name_get_id
         if_id = win_from_name_get_id(ifname)
         if not if_id:
             return None
