@@ -38,6 +38,6 @@ def get_ipv6_address(ifname):
 
 if __name__ == "__main__":
     print(get_ip_address('Net1'))
-    print(get_ipv6_address('Net1'))
+    print(get_ipv6_address('无线网络连接'))
     print(get_ip_address('ens33'))
     print(get_ipv6_address('ens33'))

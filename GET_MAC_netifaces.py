@@ -34,5 +34,5 @@ def get_mac_address(ifname):
 
 
 if __name__ == '__main__':
-    print(get_mac_address("Net1"))
+    print(get_mac_address("无线网络连接"))
     print(get_mac_address("ens33"))
