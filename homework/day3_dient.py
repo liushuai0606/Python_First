@@ -21,8 +21,9 @@ def udp_send_data(ip, port, data_list):
 
         # ---HASH校验---
         #16字节 MD5值
-        send_data = pick
+        send_data = pickle.dumps(x)
         header = struct.pack('>HHLL', version, pkt_type, seq_id, len(send_data))
+        m = hashlib.md5()
         m.update(header + send_data)
 
         md5_value = m.digest()
@@ -33,5 +34,5 @@ def udp_send_data(ip, port, data_list):
     s.close()
 
 if __name__ =="__main__":
-    user_data = ['乾颐堂'，【1，'qytang', 3], {'qytang': 1, 'test': 3}
-    udp_send_data('192.168.32.100', 6666, user_data)
+    user_data = ['乾颐堂', [1, 'qytang', 3],  {'qytang': 1, 'test': 3}]
+    udp_send_data('192.168.1.110', 6666, user_data)
