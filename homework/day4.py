@@ -4,6 +4,8 @@ print(matplotlib.matplotlib_fname())
 plt.rcParams['font.sans-serif'] = ['SimHei']  # 设置中文
 plt.rcParams['font.family'] = 'sans-serif'
 
+
+
 def mat_bing(size_list, name_list):
     # 调节图形大小，宽，高
     plt.figure(figsize=(6, 6))
