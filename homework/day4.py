@@ -1,9 +1,9 @@
 from matplotlib import pyplot as plt
 import matplotlib
+
 print(matplotlib.matplotlib_fname())
 plt.rcParams['font.sans-serif'] = ['SimHei']  # 设置中文
 plt.rcParams['font.family'] = 'sans-serif'
-
 
 
 def mat_bing(size_list, name_list):
@@ -37,6 +37,7 @@ def mat_bing(size_list, name_list):
     plt.axis('equal')
     plt.legend()
     plt.show()
+
 
 if __name__ == "__main__":
     counters = [30, 53, 12, 45]
