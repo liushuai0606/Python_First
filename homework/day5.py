@@ -1,10 +1,10 @@
 import logging
-from homework.day4 import mat_bing
-
-logging.getLogger("kamene.runtime").setLevel(logging.ERROR)  # 清除报错
-from kamene.all import *
-import paramiko
 import re
+
+from homework.day4 import mat_bing
+logging.getLogger("kamene.runtime").setLevel(logging.ERROR)  # 清除报错
+import paramiko
+from kamene.all import *
 
 
 def ssh_singlecmd(ip, username, password, cmd):
@@ -22,8 +22,7 @@ def ssh_singlecmd(ip, username, password, cmd):
         print('%stErrorn %s' % (ip, e))
 
     def get_netflow_app():
-        show_result = ssh_singlecmd('192.168.32.100', 'admin', 'cisco', 'show flow monitor name qytang-monitor cache '
-                                                                        'format table')
+        show_result = ssh_singlecmd('192.168.32.100', 'admin', 'cisco', 'show flow monitor name qytang-monitor cache format table')
         print(show_result)
         app_name_list = []
         app_bytes_list = []
