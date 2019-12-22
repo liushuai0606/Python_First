@@ -21,19 +21,20 @@ def ssh_singlecmd(ip, username, password, cmd):
     except Exception as e:
         print('%stErrorn %s' % (ip, e))
 
-    def get_netflow_app():
-        show_result = ssh_singlecmd('192.168.32.100', 'admin', 'cisco', 'show flow monitor name qytang-monitor cache format table')
-        print(show_result)
-        app_name_list = []
-        app_bytes_list = []
-        for line in show_result.strip().split('\n'):
-            print(line)
-            app_bytes = re.match(r'^((port|layer7) [a-z]+)\s+(\d+)', line)
-            if app_bytes:
-                app_name_list.append(app_bytes.groups()[0])
-                app_bytes_list.append(app_bytes.groups()[2])
+def get_netflow_app():
+    show_result = ssh_singlecmd('192.168.32.100', 'admin', 'cisco', 'show flow monitor name qytang-monitor cache format table')
+    print(show_result)
+    app_name_list = []
+    app_bytes_list = []
+    for line in show_result.strip().split('\n'):
+        print(line)
+        app_bytes = re.match(r'^((port|layer7) [a-z]+)\s+(\d+)', line)
+        if app_bytes:
+            print(app_bytes.groups())
+            app_name_list.append(app_bytes.groups()[0])
+            app_bytes_list.append(app_bytes.groups()[2])
 
-        mat_bing(app_bytes_list, app_name_list)
+    mat_bing(app_bytes_list, app_name_list)
 
-    if __name__ == "__main__":
-        get_netflow_app()
+if __name__ == "__main__":
+    get_netflow_app()
