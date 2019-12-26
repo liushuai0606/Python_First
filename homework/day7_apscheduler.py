@@ -43,16 +43,24 @@ scheduler = BlockingScheduler()
 # scheduler.add_job(func=qyt_print, args=['test1', 'test2'], trigger='cron', hour=10, minute=14, id='cron调度!测试正常打印!')
 
 # date: 只在某个时间点执行一次run_date(datetime|str)
-# scheduler.add_job(func=qyt_print, args=['test1', 'test2'], trigger='date', run_date=datetime(2019, 3, 26, 10, 17), id='date调度!测试正常打印!')
+# scheduler.add_job(func=qyt_print,
+#                   args=['test1', 'test2'],
+#                   trigger='date',
+#                   # run_date=datetime(2019, 3, 26, 10, 17),
+#                   second='*/10',
+#                   id='date调度!测试正常打印!')
 
 # interval: 每隔一段时间执行一次weeks=0 | days=0 | hours=0 | minutes=0 | seconds=0, start_date=None, end_date=None, timezone=None
-scheduler.add_job(func=qyt_print, args=['test1', 'test2'], trigger='interval', seconds=10,
-                  start_date=datetime(2019, 3, 26, 10, 27), end_date=datetime(2019, 3, 26, 10, 28),
+scheduler.add_job(func=qyt_print,
+                  args=['test1', 'test2'],
+                  trigger='interval',
+                  seconds=10,
+                  # start_date=datetime(2019, 3, 26, 10, 27), end_date=datetime(2019, 3, 26, 10, 28),
                   id='interval调度!测试正常打印!')
 
 # 加载事件处理函数
 scheduler.add_listener(my_listener, EVENT_JOB_EXECUTED | EVENT_JOB_ERROR)
-# 记录日志
+# # 记录日志
 scheduler._logger = logging
-# 开始调度
+# # 开始调度
 scheduler.start()
